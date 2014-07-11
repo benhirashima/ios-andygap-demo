@@ -39,7 +39,9 @@
 
         $(document).ready(function () {
             $("#btn_alert02").click(function () {
-                $.ajax("http://myApp.example.org/alert?title=Test%20from%20AJAX&message=this%20is%20a%20message%20from%20an%20AJAX%20request");
+                $.ajax("http://myApp.example.org/alert?title=Test%20from%20AJAX&message=this%20is%20a%20message%20from%20an%20AJAX%20request").always(function(data, textStatus, jqXHR){
+                      alert("textStatus: " + textStatus);
+                });
             });
 
             $("#btn_contacts").click(function () {
